@@ -1,0 +1,29 @@
+{
+  "name": "servd-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Documentation site for servd (SvelteKit, prerendered, bilingual en/zh).",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@shikijs/markdown-it": "^1.0.0",
+    "@sveltejs/adapter-static": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/markdown-it": "^14.0.0",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.0.0",
+    "shiki": "^1.0.0",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0"
+  }
+}

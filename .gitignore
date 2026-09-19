@@ -1,0 +1,38 @@
+# Dependencies
+node_modules
+
+# SvelteKit generated output
+/.svelte-kit
+/build
+/package
+
+# Vite / build artifacts
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+*.local
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / IDE
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
