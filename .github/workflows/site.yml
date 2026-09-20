@@ -47,8 +47,8 @@ jobs:
       - name: Build (prerender)
         run: pnpm build
         env:
-          BASE_PATH: ${{ vars.BASE_PATH || format('/{0}', github.event.repository.name) }}
-          PUBLIC_SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}', github.owner.login, github.event.repository.name) }}
+          BASE_PATH: ${{ vars.BASE_PATH }}
+          PUBLIC_SITE_URL: ${{ vars.SITE_URL }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
