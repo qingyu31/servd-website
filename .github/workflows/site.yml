@@ -1,6 +1,6 @@
 # Build and deploy the servd documentation site to GitHub Pages.
 #
-# The site is a fully-prerendered SvelteKit static build (website/build).
+# The site is a fully-prerendered SvelteKit static build (build/).
 # For a *project* site (https://<user>.github.io/<repo>/) the build is given a
 # BASE_PATH of /<repo> and a matching PUBLIC_SITE_URL so canonical/hreflang/
 # sitemap URLs are correct. Override either with repository variables
@@ -39,13 +39,13 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-          cache-dependency-path: website/pnpm-lock.yaml
+          cache-dependency-path: pnpm-lock.yaml
 
-      - name: Install website dependencies
-        run: pnpm --dir website install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Build (prerender)
-        run: pnpm --dir website build
+        run: pnpm build
         env:
           BASE_PATH: ${{ vars.BASE_PATH || format('/{0}', github.event.repository.name) }}
           PUBLIC_SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}', github.owner.login, github.event.repository.name) }}
@@ -56,7 +56,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: website/build
+          path: build
 
   deploy:
     needs: build
